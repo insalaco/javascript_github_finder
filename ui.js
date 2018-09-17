@@ -31,6 +31,22 @@ class UI {
     `;
   }
 
+  // show alert message
+  showAlert(message, className) {
+    // create div
+    const div = document.createElement('div');
+    // add css class to div
+    div.className = className;
+    // add text
+    div.appendChild(document.createTextNode(message));
+    // get parent
+    const container = document.querySelector('.searchContainer');
+    // get search box
+    const search = document.querySelector('.search');
+    // insert div before search
+    container.insertBefore(div, search);
+  }
+
   clearProfile() {
     this.profile.innerHTML = '';
   }
